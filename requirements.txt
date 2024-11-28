@@ -1,2 +1,7 @@
 pycountry
+streamlit
+scikit-learn
 joblib
+numpy
+pandas
+
