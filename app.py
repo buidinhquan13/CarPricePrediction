@@ -9,9 +9,8 @@ from datetime import datetime
 # Tiêu đề của ứng dụng
 st.title("🚗 Dự đoán giá xe ô tô 🚗")
 
-today = datetime.today().date()
 countries = [country.name for country in pycountry.countries]
-df = pd.read_csv('data_preprocessing.csv')
+df = pd.read_csv('filled_data.csv')
 car_make_options = df['Make'].dropna().unique().tolist()
 car_make_options.sort()
 
@@ -32,7 +31,7 @@ fuel_options.sort()
 
 
 # Load model
-model = joblib.load('model_test.pkl')  # Load the trained model (replace with your actual path)
+model = joblib.load('model_test_xgboost.pkl')  # Load the trained model (replace with your actual path)
 
 # Helper function for prediction
 def predict_price(input_data):
@@ -69,11 +68,10 @@ with col2:
       transmission = st.selectbox("Transmission", ["", "Automatic", "Manual"])
       fuel = st.selectbox("Fuel", [""] + fuel_options)
       drive_type = st.selectbox("Drive type", ["", "4x2", "4x4"])
-      consumption = st.number_input("Consumption (l/100km)", min_value=0.00)
+      consumption = st.number_input("Consumption (l/100km)", min_value=0.0)
       co2_emissions = st.number_input("CO2 emissions (g/km)", min_value=0)
       body_color = st.selectbox("Body color", [""] + body_color_options)
       
-    
 with col3:
       interior_color = st.selectbox("Interior color", [""] + interior_color_options)
       interior_material = st.selectbox("Interior material", [""] + interior_material_options)
@@ -160,7 +158,7 @@ with st.container():
             'Make': [make],
             'Model': [model_input],
             'Location': [location],
-            'First registration': [first_registration],
+            #'First registration': [first_registration],
             'Mileage': [mileage],
             'Power': [power],
             'Transmission': [transmission],
@@ -175,6 +173,7 @@ with st.container():
             'Doors': [doors],
             'Seats': [seats]
         })
+        print(input_data)
 
         # Make the prediction
         predicted_price = predict_price(input_data)
