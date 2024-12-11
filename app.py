@@ -63,21 +63,23 @@ with col1:
     # model_options = models_by_make.get(make, [])
     
     model_input = st.selectbox("Model", [""] + model_options)
-    location = st.selectbox("Location", [""] + countries)
-    first_registration = st.number_input("Year registration", min_value=2000, max_value=2024, value=2020)
-    #first_registration = st.slider("Year registration", 2000, 2024, 2020)
+    
     mileage = st.number_input("Mileage (km) ", min_value=0)
+    
+    first_registration = st.number_input("Year registration", min_value=2000, max_value=2024, value=2020)
+    
     power = st.number_input("Power (hp) **(Value > 0)**", min_value=0)
-      
+    
+    transmission = st.selectbox("Transmission", ["", "Automatic", "Manual"])     
 
 with col2:
-    transmission = st.selectbox("Transmission", ["", "Automatic", "Manual"])
+    
     fuel = st.selectbox("Fuel", [""] + fuel_options)
     drive_type = st.selectbox("Drive type", ["", "4x2", "4x4"])
     consumption = st.number_input("Consumption (l/100km) **(Value > 0)**", min_value=0.0)
     co2_emissions = st.number_input("CO2 emissions (g/km) **(Value > 0)**", min_value=0)
 
-    
+    location = st.selectbox("Location", [""] + countries)
       
 with col3:
     body_color_options = [color for color in body_color_options if color != "Missing"]
