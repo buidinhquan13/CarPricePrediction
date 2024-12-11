@@ -46,38 +46,49 @@ col1, col2, col3 = st.columns(3)
 
 # Nhập liệu ở cột đầu tiên
 with col1:
-      make = st.selectbox("Make", [""] + car_make_options)
-      
-      if make:
-         model_options = df[df['Make'] == make]['Model'].dropna().unique().tolist()
-         model_options.sort()
-      else:
-         model_options = df['Model'].dropna().unique().tolist()  # Tất cả các model nếu chưa chọn Make
-         model_options.sort()
-         
-      # model_options = models_by_make.get(make, [])
-      model_input = st.selectbox("Model", [""] + model_options)
-      location = st.selectbox("Location", [""] + countries)
-      first_registration = st.number_input("Year registration", min_value=2000, max_value=2024, value=2020)
-      #first_registration = st.slider("Year registration", 2000, 2024, 2020)
-      mileage = st.number_input("Mileage (km)", min_value=0)
-      power = st.number_input("Power (hp)", min_value=0)
+    car_make_options.append('Other')
+    make = st.selectbox("Make", [""] + car_make_options)
+    
+    if make == 'Other':
+        model_options = ['Other']
+    elif make:
+        model_options = df[df['Make'] == make]['Model'].dropna().unique().tolist()
+        model_options.sort()
+        model_options.append('Other')
+    else:
+        model_options = df['Model'].dropna().unique().tolist()  # Tất cả các model nếu chưa chọn Make
+        model_options.sort()
+        model_options.append('Other')
+        
+    # model_options = models_by_make.get(make, [])
+    
+    model_input = st.selectbox("Model", [""] + model_options)
+    location = st.selectbox("Location", [""] + countries)
+    first_registration = st.number_input("Year registration", min_value=2000, max_value=2024, value=2020)
+    #first_registration = st.slider("Year registration", 2000, 2024, 2020)
+    mileage = st.number_input("Mileage (km) ", min_value=0)
+    power = st.number_input("Power (hp) **(Value > 0)**", min_value=0)
       
 
 with col2:
-      transmission = st.selectbox("Transmission", ["", "Automatic", "Manual"])
-      fuel = st.selectbox("Fuel", [""] + fuel_options)
-      drive_type = st.selectbox("Drive type", ["", "4x2", "4x4"])
-      consumption = st.number_input("Consumption (l/100km)", min_value=0.0)
-      co2_emissions = st.number_input("CO2 emissions (g/km)", min_value=0)
-      body_color = st.selectbox("Body color", [""] + body_color_options)
+    transmission = st.selectbox("Transmission", ["", "Automatic", "Manual"])
+    fuel = st.selectbox("Fuel", [""] + fuel_options)
+    drive_type = st.selectbox("Drive type", ["", "4x2", "4x4"])
+    consumption = st.number_input("Consumption (l/100km) **(Value > 0)**", min_value=0.0)
+    co2_emissions = st.number_input("CO2 emissions (g/km) **(Value > 0)**", min_value=0)
+
+    
       
 with col3:
-      interior_color = st.selectbox("Interior color", [""] + interior_color_options)
-      interior_material = st.selectbox("Interior material", [""] + interior_material_options)
-      body = st.selectbox("Body", [""] + car_body_options)
-      doors = st.selectbox("Doors", ["", "4/5 doors", "2/3 doors"])
-      seats = st.number_input("Seats", min_value=2, max_value=7, value=5)
+    body_color_options = [color for color in body_color_options if color != "Missing"]
+    body_color = st.selectbox("Body color", [""] + body_color_options)
+    interior_color_options = [color for color in interior_color_options if color != "Missing"]
+    interior_color = st.selectbox("Interior color", [""] + interior_color_options)
+    interior_material_options = [material for material in interior_material_options if material != "Missing"]
+    interior_material = st.selectbox("Interior material", [""] + interior_material_options)
+    body = st.selectbox("Body", [""] + car_body_options)
+    doors = st.selectbox("Doors", ["", "4/5 doors", "2/3 doors"])
+    seats = st.number_input("Seats", min_value=2, max_value=7, value=5)
 
 
 ## Nút dự đoán và hiển thị dự đoán
