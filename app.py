@@ -31,7 +31,7 @@ fuel_options.sort()
 
 
 # Load model
-model = joblib.load('model_test_xgboost.pkl')  # Load the trained model (replace with your actual path)
+model = joblib.load('model_xgboost.pkl')  # Load the trained model (replace with your actual path)
 
 # Helper function for prediction
 def predict_price(input_data):
