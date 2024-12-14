@@ -1,3 +1,7 @@
+# Đầu tiên: mở terminal và chạy dòng lệnh
+# pip install streamlit joblib pycountry
+# Sau đó: streamlit run 5_app.py để demo
+
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -89,7 +93,7 @@ with col3:
     interior_material_options = [material for material in interior_material_options if material != "Missing"]
     interior_material = st.selectbox("Interior material", [""] + interior_material_options)
     body = st.selectbox("Body", [""] + car_body_options)
-    doors = st.selectbox("Doors", ["", "4/5 doors", "2/3 doors"])
+    doors = st.selectbox("Doors", ["", "4/5 doors", "2/3 doors", "6/7 doors"])
     seats = st.number_input("Seats", min_value=2, max_value=7, value=5)
 
 
