@@ -178,19 +178,19 @@ We have to be using various machine learning models to see which model reduces t
 
 ## 👉 Run project
 
-*1. Clone this repo:*
+### 1. Clone this repo:
 <pre>
-git clone https://github.com/buidinhquan13/CarPricePrediction.git
+<code class="copyable">git clone https://github.com/buidinhquan13/CarPricePrediction.git</code>
 </pre>
 
-*2. From your terminal, run:*
+### 2. Install requirements:
 <pre>
-pip install requirements.txt
+<code class="copyable">pip install requirements.txt</code>
 </pre>
 
-*2. From your terminal, run:*
+### 3. Run the app:
 <pre>
-streamlit run app.py
+<code class="copyable">streamlit run app.py</code>
 </pre>
 
 
