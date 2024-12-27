@@ -176,8 +176,22 @@ We have to be using various machine learning models to see which model reduces t
 * The best-performing model in terms of __mean absolute error (MAE)__ and __mean squared error (MSE)__ was __XGBoost Regressor__, which outperformed other models.
 * __Scatterplots__ between the __actual prices__ and __predicted prices__ showed an almost __linear__ relationship, particularly for the __XGBoost Regressor__ model.  
 
-## 👉 RUN APPLICATION
+## 👉 Run project
 
-1. You'll have to download and install Git which could be used for cloning the repositories that are present. The link to download Git is [https://git-scm.com/downloads.](https://github.com/buidinhquan13/CarPricePrediction.git)
+*1. Clone this repo:*
+<pre>
+git clone https://github.com/buidinhquan13/CarPricePrediction.git
+</pre>
+
+*2. From your terminal, run:*
+<pre>
+pip install requirements.txt
+</pre>
+
+*2. From your terminal, run:*
+<pre>
+streamlit run app.py
+</pre>
+
 
 
