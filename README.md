@@ -165,11 +165,11 @@ We have to be using various machine learning models to see which model reduces t
 
 | __Machine Learning Models__|__R2__| __Mean Absolute Error__| __Mean Squared Error__|
 | :-:| :-:| :-:|:-:|
-| [__1. Linear Regression__](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)|0.889  |22170.316| 956741143.227|
-| [__2. XGBoost__](https://xgboost.readthedocs.io/en/latest/python/sklearn_estimator.html)|__0.943__	|__13707.594__|	__492416589.018__|
-|	[__3. Histogram Gradient Boosting__](https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html)|	0.942|13731.157 |	505920218.740|
-|	[__4. Random Forest__](https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.RandomForestRegressor.html)|	0.939| 13252.834|	528170078.124|
-|	[__6. Decision Tree__](https://scikit-learn.org/1.5/modules/generated/sklearn.tree.DecisionTreeRegressor.html)|	0.898| 16991.575|	881261960.347|
+| [__Linear Regression__](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)|0.889  |22170.316| 956741143.227|
+| [__XGBoost__](https://xgboost.readthedocs.io/en/latest/python/sklearn_estimator.html)|__0.943__	|__13707.594__|	__492416589.018__|
+|	[__Histogram Gradient Boosting__](https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html)|	0.942|13731.157 |	505920218.740|
+|	[__Random Forest__](https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.RandomForestRegressor.html)|	0.939| 13252.834|	528170078.124|
+|	[__Decision Tree__](https://scikit-learn.org/1.5/modules/generated/sklearn.tree.DecisionTreeRegressor.html)|	0.898| 16991.575|	881261960.347|
 
 ## Outcomes
 
