@@ -44,7 +44,7 @@ These metrics provide insights into the accuracy and reliability of the predicti
 **Dashboard**
 <img src = "https://github.com/buidinhquan13/CarPricePrediction/blob/main/dashboard.png"/>
 
-
+<--
 ### Model Performance
 
 We will now focus our attention on the performance of __various models__ on the test data. Scatterplots can help us determine how much of a spread our predictions are from the actual values. Let us go over the performance of many ML models used in our problem of car price prediction. 
